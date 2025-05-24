@@ -54,9 +54,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      		instance    title       tags mask     isfloating   isterminal	noswallow	monitor */
-	{ "Gimp",     		NULL,       NULL,       0,            1,           0,		0,		-1 },
-	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           0,	       -1,		-1 },
-	{ "st-256color",	NULL,	    NULL,	0,	      0,	   1,	        0,		-1 },	
+	{ "Gimp",     		NULL,       NULL,       0,            1,           0,		    0,		    -1 },
+	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           0,	       -1,		    -1 },
+	{ "st-256color",	NULL,	    NULL,	    0,	          0,	       1,	        0,		    -1 },	
 };
 
 /* layout(s) */
@@ -120,13 +120,13 @@ static const Key keys[] = {
 	{ MODKEY,			            XK_minus,  zoom,	       {0} },
 	{ MODKEY,			            XK_plus,   zoom,	       {0} },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_plus,  setgaps,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
     { MODKEY|ShiftMask,             XK_Return, setmfact,       {.f = 0.55} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-    { MODKEY|ControlMask,           XK_plus, spawn,            {.v = upvol   } },
-    { MODKEY|ControlMask,           XK_minus, spawn,           {.v = downvol } },
-    { MODKEY|ControlMask,           XK_m, spawn,               {.v = mutevol } },
+    { MODKEY|ControlMask,           XK_plus,   spawn,          {.v = upvol   } },
+    { MODKEY|ControlMask,           XK_minus,  spawn,          {.v = downvol } },
+    { MODKEY|ControlMask,           XK_m,      spawn,          {.v = mutevol } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
