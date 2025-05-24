@@ -42,10 +42,10 @@ static const unsigned int alphas[][3]      = {
 	[SchemeSel]  = { OPAQUE, OPAQUE, OPAQUE },
 };
 
-/* amixer volume control */
-static const char *upvol[]      = { "/usr/bin/amixer",  "set", "Master", "5%+", NULL };
-static const char *downvol[]    = { "/usr/bin/amixer",  "set", "Master", "5%-", NULL };
-static const char *mutevol[]    = { "/usr/bin/amixer", "set", "Master", "toggle", NULL };
+/* volume control */
+static const char *upvol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
