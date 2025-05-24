@@ -11,23 +11,20 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* fonts */
-static const char *fonts[]    = { "terminus:size=14" };
-static const char dmenufont[] = "terminus:size=14";
+// static const char *fonts[]    = { "terminus:size=14" };
+// static const char dmenufont[] = "terminus:size=14";
 
-/* jp fonts */
-// static const char *fonts[]          = { "monospace:size=12", 
-//                                          "Noto Sans CJK JP:size=10" };
-// static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "monospace:size=12", 
+                                        "Noto Sans CJK JP:size=10" };
+static const char dmenufont[]       = "monospace:size=12";
 
 /* colors */
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ffffff";	/* highlight color inside */
-static const char col_cyan[]        = "#8dbf7c";	/* highlight color outside  */
-
-/* brown: "#8dbf7c"; */ 
-/* test: #707780 */
+static const char col_cyan[]        = "#8dbf7c";	/* gruv color outside  */
+// static const char col_cyan[]        = "#707780";	/* teal color outside  */
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -48,10 +45,8 @@ static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "
 static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
-/* jap tagging */
-// static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
 static const Rule rules[] = {
 	/* xprop(1):
