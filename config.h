@@ -124,7 +124,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
     { MODKEY|ShiftMask,             XK_Return, setmfact,       {.f = 0.55} },
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
     { MODKEY|ControlMask,           XK_plus,   spawn,          {.v = upvol   } },
     { MODKEY|ControlMask,           XK_minus,  spawn,          {.v = downvol } },
     { MODKEY|ControlMask,           XK_m,      spawn,          {.v = mutevol } },
