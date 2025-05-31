@@ -88,8 +88,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *flamecmd[] = { "flameshot", "gui", NULL };
-static const char *pdfmenu[] = { "/home/karl/git/scripts/.sh", NULL };
-static const char *sysmenu[] = { "/home/karl/git/scripts/sysmenu.sh" };
+
+/* scripts */
+static const char *pdfmenu[] = { "/home/karl/git/scripts/pdfmenu.sh", NULL };
+static const char *sysmenu[] = { "/home/karl/git/scripts/sysmenu.sh", NULL };
+static const char *project[] = { "/home/karl/git/scripts/project.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -121,8 +124,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,			            XK_minus,  zoom,	       {0} },
 	{ MODKEY,			            XK_plus,   zoom,	       {0} },
-	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -5 } },
+	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
     { MODKEY|ShiftMask,             XK_Return, setmfact,       {.f = 0.55} },
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
@@ -131,6 +134,7 @@ static const Key keys[] = {
     { MODKEY|ControlMask,           XK_m,      spawn,          {.v = mutevol } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pdfmenu } },
     { MODKEY|ControlMask,           XK_k,      spawn,          {.v = sysmenu } },
+    { MODKEY|ControlMask,           XK_p,      spawn,          {.v = project } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
