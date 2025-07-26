@@ -46,6 +46,11 @@ static const char *upvol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
+/* volume control on laptop */
+// static const char *upvol[]   = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
+// static const char *downvol[] = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
+// static const char *mutevol[] = { "/usr/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+
 /* tagging */
 // static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
@@ -146,6 +151,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+    /* volume & brightness control on laptop */
+    // { 0, XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
+    // { 0, XF86XK_AudioRaiseVolume,   spawn, {.v = upvol } },
+    // { 0, XF86XK_AudioMute,          spawn, {.v = mutevol } },
+    // { 0, XF86XK_MonBrightnessUp,    spawn, SHCMD("brightnessctl set +10%") },
+    // { 0, XF86XK_MonBrightnessDown,  spawn, SHCMD("brightnessctl set 10%-") },
 };
 
 /* button definitions */
