@@ -11,12 +11,12 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* fonts */
-// static const char *fonts[]    = { "terminus:size=14" };
-// static const char dmenufont[] = "terminus:size=14";
+static const char *fonts[]    = { "terminus:size=14" };
+static const char dmenufont[] = "terminus:size=14";
 
-static const char *fonts[]          = { "monospace:size=10", 
-                                         "Noto Sans CJK JP:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+/* static const char *fonts[]          = { "monospace:size=10", */
+/*                                         "Noto Sans CJK JP:size=10" }; */
+/* static const char dmenufont[]       = "monospace:size=10"; */
 
 /* colors */
 static const char col_gray1[]       = "#222222";
@@ -46,14 +46,9 @@ static const char *upvol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *mutevol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 
-/* volume control on laptop */
-// static const char *upvol[]   = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
-// static const char *downvol[] = { "/usr/bin/wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
-// static const char *mutevol[] = { "/usr/bin/wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
-
 /* tagging */
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+/* static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" }; */
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -61,9 +56,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      		instance    title       tags mask     isfloating   isterminal	noswallow	monitor */
-	{ "Gimp",     		NULL,       NULL,       0,            1,           0,	    	0,		    -1 },
+	{ "Gimp",     		NULL,       NULL,       0,            1,           0,	    	    0,		    -1 },
 	{ "Firefox",  		NULL,       NULL,       1 << 8,       0,           0,          -1,		    -1 },
-	{ "st-256color",	NULL,	    NULL,   	0,	          0,	       1,           0,		    -1 },	
+	{ "st-256color",	NULL,       NULL,       0,	          0,           1,           0,		    -1 },	
 };
 
 /* layout(s) */
@@ -103,9 +98,9 @@ static const char *project[] = { "/home/karl/git/scripts/project.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-    { MODKEY,                       XK_s,      spawn,          {.v = flamecmd } },
+  { MODKEY,                       XK_s,      spawn,          {.v = flamecmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,	                      XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      rotatestack,    {.i = -1 } },
@@ -129,19 +124,19 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,			            XK_minus,  zoom,	       {0} },
-	{ MODKEY,			            XK_plus,   zoom,	       {0} },
+	{ MODKEY,			                  XK_minus,  zoom,  	       {0} },
+	{ MODKEY,			                  XK_plus,   zoom,  	       {0} },
 	{ MODKEY|ShiftMask,             XK_minus,  setgaps,        {.i = -5 } },
 	{ MODKEY|ShiftMask,             XK_plus,   setgaps,        {.i = +5 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-    { MODKEY|ShiftMask,             XK_Return, setmfact,       {.f = 0.55} },
+  { MODKEY|ShiftMask,             XK_Return, setmfact,       {.f = 0.55} },
 	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
-    { MODKEY|ControlMask,           XK_plus,   spawn,          {.v = upvol   } },
-    { MODKEY|ControlMask,           XK_minus,  spawn,          {.v = downvol } },
-    { MODKEY|ControlMask,           XK_m,      spawn,          {.v = mutevol } },
-    { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pdfmenu } },
-    { MODKEY|ControlMask,           XK_k,      spawn,          {.v = sysmenu } },
-    { MODKEY|ControlMask,           XK_p,      spawn,          {.v = project } },
+  { MODKEY|ControlMask,           XK_plus,   spawn,          {.v = upvol   } },
+  { MODKEY|ControlMask,           XK_minus,  spawn,          {.v = downvol } },
+  { MODKEY|ControlMask,           XK_m,      spawn,          {.v = mutevol } },
+  { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = pdfmenu } },
+  { MODKEY|ControlMask,           XK_k,      spawn,          {.v = sysmenu } },
+  { MODKEY|ControlMask,           XK_p,      spawn,          {.v = project } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -151,12 +146,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-    /* volume & brightness control on laptop */
-    // { 0, XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
-    // { 0, XF86XK_AudioRaiseVolume,   spawn, {.v = upvol } },
-    // { 0, XF86XK_AudioMute,          spawn, {.v = mutevol } },
-    // { 0, XF86XK_MonBrightnessUp,    spawn, SHCMD("brightnessctl set +10%") },
-    // { 0, XF86XK_MonBrightnessDown,  spawn, SHCMD("brightnessctl set 10%-") },
 };
 
 /* button definitions */
