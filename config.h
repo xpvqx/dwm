@@ -23,10 +23,11 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ffffff";	/* highlight color inside */
-static const char col_cyan[]        = "#8dbf7c";	/* highlight color outside  */
+static const char col_cyan[]        = "#686f75";	/* highlight color outside  */
 
 /* teal: #707780 */
 /* brown: #8dbf7c */
+/* gray: #686f75 */
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
