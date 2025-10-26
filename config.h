@@ -16,10 +16,6 @@ static const char *fonts[]    = { "terminus:size=15",
                                   "JetBrains Mono Nerd Font:size=15" };
 static const char dmenufont[] = "terminus:size=15";
 
-/* static const char *fonts[]          = { "monospace:size=10", */
-/*                                         "Noto Sans CJK JP:size=10" }; */
-/* static const char dmenufont[]       = "monospace:size=10"; */
-
 /* colors */
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -47,7 +43,6 @@ static const char *mutevol[] = { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "t
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-// static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
 static const Rule rules[] = {
 	/* xprop(1):
