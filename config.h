@@ -1,18 +1,19 @@
 /* See LICENSE file for copyright and license details. */
 
+// #include <X11/XF86keysym.h> /* laptop f-keys */
 #define OPAQUE 0xffU
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 6;        /* gaps between windows */
-static const int swallowfloating    = 0;	    /* 1 means swallow floating windows by default */
+static const int swallowfloating    = 0;	      /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* fonts */
 static const char *fonts[]    = { "terminus:size=15",
-                                   "JetBrains Mono Nerd Font:size=15" };
+                                  "JetBrains Mono Nerd Font:size=15" };
 static const char dmenufont[] = "terminus:size=15";
 
 /* static const char *fonts[]          = { "monospace:size=10", */
@@ -90,9 +91,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *flamecmd[] = { "flameshot", "gui", NULL };
 
 /* scripts */
-static const char *pdfmenu[] = { "/home/karl/git/scripts/pdfmenu.sh", NULL };
-static const char *sysmenu[] = { "/home/karl/git/scripts/sysmenu.sh", NULL };
-static const char *project[] = { "/home/karl/git/scripts/project.sh", NULL };
+static const char *pdfmenu[] = { "~/git/scripts/pdfmenu.sh", NULL };
+static const char *sysmenu[] = { "~/git/scripts/sysmenu.sh", NULL };
+static const char *project[] = { "~/git/scripts/project.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -144,6 +145,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+  // { 0, XF86XK_AudioLowerVolume,   spawn,                     {.v = downvol } },
+  // { 0, XF86XK_AudioRaiseVolume,   spawn,                     {.v = upvol } },
+ 	// { 0, XF86XK_AudioMute,          spawn,                     {.v = mutevol } },
+ 	// { 0, XF86XK_MonBrightnessUp,    spawn,     SHCMD("brightnessctl set +10%") },
+  // { 0, XF86XK_MonBrightnessDown,  spawn,     SHCMD("brightnessctl set 10%-") },
 };
 
 /* button definitions */
